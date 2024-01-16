@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="19">
+            <item index="0" class="java.lang.String" itemvalue="human_body_prior" />
+            <item index="1" class="java.lang.String" itemvalue="open3d-python" />
+            <item index="2" class="java.lang.String" itemvalue="PyYAML" />
+            <item index="3" class="java.lang.String" itemvalue="torch" />
+            <item index="4" class="java.lang.String" itemvalue="configargparse" />
+            <item index="5" class="java.lang.String" itemvalue="tqdm" />
+            <item index="6" class="java.lang.String" itemvalue="scipy" />
+            <item index="7" class="java.lang.String" itemvalue="smplx" />
+            <item index="8" class="java.lang.String" itemvalue="opencv-python" />
+            <item index="9" class="java.lang.String" itemvalue="torchgeometry" />
+            <item index="10" class="java.lang.String" itemvalue="pillow" />
+            <item index="11" class="java.lang.String" itemvalue="numpy" />
+            <item index="12" class="java.lang.String" itemvalue="trimesh" />
+            <item index="13" class="java.lang.String" itemvalue="pyrender" />
+            <item index="14" class="java.lang.String" itemvalue="scikit-image" />
+            <item index="15" class="java.lang.String" itemvalue="pyopengl" />
+            <item index="16" class="java.lang.String" itemvalue="tensorboard" />
+            <item index="17" class="java.lang.String" itemvalue="chumpy" />
+            <item index="18" class="java.lang.String" itemvalue="torchvision" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,6 +1,6 @@
 # RoHM
 ## Robust Human Motion Reconstruction via Diffusion
-#### [Project Page](https://sanweiliti.github.io/ROHM/ROHM.html) | [Paper](https://arxiv.org/abs/xxx) 
+#### [Project Page](https://sanweiliti.github.io/ROHM/ROHM.html) | [Paper](https://arxiv.org/abs/2401.08570) 
 
 
 RoHM is a novel diffusion-based motion model that, conditioned on **noisy and occluded input** data, reconstructs complete, plausible motions in **consistent global coordinates**.

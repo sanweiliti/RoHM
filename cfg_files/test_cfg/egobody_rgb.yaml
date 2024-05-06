@@ -1,0 +1,32 @@
+body_model_path: 'data/body_models/smplx_model'
+dataset: 'egobody'
+dataset_root: 'datasets/EgoBody'  # /mnt/ssd/egobody_release'
+init_root: 'data/init_motions/init_egobody_rgb'
+recording_name: 'recording_20210907_S02_S01_01'
+
+device: 0
+seed: 0
+diffusion_steps_posenet: 1000
+diffusion_steps_trajnet: 100
+noise_schedule: 'cosine'
+timestep_respacing_eval: ''
+sigma_small: True
+
+clip_len: 145
+repr_abs_only: True
+
+model_path_trajnet: 'data/checkpoints/trajnet_checkpoint/model000450000.pt'
+model_path_trajnet_control: 'data/checkpoints/trajnet_control_checkpoint/model000400000.pt'
+model_path_posenet: 'data/checkpoints/posenet_checkpoint/model000200000.pt'
+
+batch_size: 20
+cond_fn_with_grad: True
+save_root: 'test_results/results_egobody_rgb'
+
+sample_iter: 2
+iter2_cond_noisy_traj: False
+iter2_cond_noisy_pose: False
+early_stop: True
+
+window_size: 2
+use_scene_floor_height: True

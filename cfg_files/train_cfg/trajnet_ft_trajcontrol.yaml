@@ -1,0 +1,44 @@
+body_model_path: 'data/body_models/smplx_model'
+dataset_root: 'datasets/AMASS_smplx_preprocessed'
+
+device: 0
+diffusion_steps: 100
+noise_schedule: 'cosine'
+timestep_respacing_eval: ''
+sigma_small: True
+
+task: traj
+clip_len: 145
+repr_abs_only: True
+trajcontrol: True
+load_pretrained_backbone: True
+pretrained_backbone_path: 'runs/79530/model000450000.pt'  # todo: change to stage 2 checkpoint
+load_pretrained_model: False
+pretrained_model_path: ''
+
+input_noise: True
+noise_std_smplx_global_rot: 2.0
+noise_std_smplx_body_rot: 2.0
+noise_std_smplx_trans: 0.03
+noise_std_smplx_betas: 0.2
+
+weight_loss_root_rec_repr: 1.0
+weight_loss_root_pos_global: 100
+weight_loss_root_vel_global: 1000.0
+weight_loss_root_rot_vel_from_abs_traj: 1.0
+weight_loss_root_smplx_transl_vel: 1000
+weight_loss_root_smplx_rot_vel: 1.0
+weight_loss_root_smooth: 1.0
+weight_loss_root_rot_cos_smooth_from_abs_traj: 0.0
+
+batch_size: 64
+debug: False
+max_infill_ratio: 0.1
+start_infill_epoch: 100000000000000000000
+mask_prob: 0.4
+save_dir: 'runs'  # todo
+lr: 1e-4
+weight_decay: 0.0
+log_interval: 25000
+save_interval: 25000
+num_steps: 1000000000

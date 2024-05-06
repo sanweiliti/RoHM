@@ -1,0 +1,17 @@
+body_model_path: 'data/body_models/smplx_model'
+
+dataset: 'prox'
+dataset_root: 'datasets/PROX'
+saved_data_dir: 'test_results/results_prox_rgbd/test_prox_grad_True_iter_2_iter2trajnoisy_False_iter2posenoisy_False_earlystop_True_seed_0'
+recording_name: 'all'
+
+device: 0
+
+visualize: False
+vis_interval: 1
+vis_option: 'mesh'
+
+render: False
+render_interval: 1
+render_save_path: 'render_imgs/render_prox_rgbd'
+

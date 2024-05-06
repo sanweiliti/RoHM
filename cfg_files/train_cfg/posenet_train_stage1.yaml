@@ -1,0 +1,38 @@
+body_model_path: 'data/body_models/smplx_model'
+dataset_root: 'datasets/AMASS_smplx_preprocessed'
+
+device: 0
+diffusion_steps: 1000
+noise_schedule: 'cosine'
+timestep_respacing_eval: ''
+sigma_small: True
+
+task: pose
+clip_len: 145
+load_pretrained_model: False
+pretrained_model_path: ''
+
+input_noise: True
+noise_std_smplx_global_rot: 1.0
+noise_std_smplx_body_rot: 1.0
+noise_std_smplx_trans: 0.01
+noise_std_smplx_betas: 0.01
+
+weight_loss_rec_repr_full_body: 1.0
+weight_loss_repr_foot_contact_mse: 1.0
+weight_loss_joint_pos_global: 100.0
+weight_loss_joint_vel_global: 1000.0
+weight_loss_joint_smooth: 0.0
+start_skating_loss_epoch: 1000
+weight_loss_foot_skating: 0.1
+
+batch_size: 64
+debug: False
+start_prox_mask_epoch: 500
+mask_scheme: 'lower+upper+full'
+save_dir: 'runs'  # todo
+lr: 1e-4
+weight_decay: 0.0
+log_interval: 25000
+save_interval: 25000
+num_steps: 1000000000

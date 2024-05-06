@@ -1,3 +1,14 @@
 __pycache__
 .DS_Store
 .idea
+/runs*
+/test_results*
+/checkpoints*
+/data
+/datasets
+/render_imgs*
+/release_data*
+/release_datasets*
+/run_script_test.sh
+/README_old.md
+/init_motions_sample

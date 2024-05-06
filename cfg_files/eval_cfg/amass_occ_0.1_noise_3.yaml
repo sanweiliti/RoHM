@@ -1,0 +1,12 @@
+saved_data_path: 'test_results/results_amass_full/test_amass_full_grad_True_mask_full_noise_3_infill_traj_0.1_iter_2_iter2trajnoisy_True_iter2posenoisy_True_earlystop_False_seed_0.pkl'
+body_model_path: 'data/body_models/smplx_model'
+
+device: 0
+traj_mask_ratio: 0.1
+mask_scheme: full
+visualize: False
+vis_interval: 100
+
+render: False
+render_interval: 100
+render_save_path: 'render_imgs/render_amass/occ_0.1_noise_3'

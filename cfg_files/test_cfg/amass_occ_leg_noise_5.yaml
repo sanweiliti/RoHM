@@ -1,0 +1,33 @@
+body_model_path: 'data/body_models/smplx_model'
+dataset_root: 'datasets/AMASS_smplx_preprocessed'
+
+device: 0
+seed: 0
+diffusion_steps_posenet: 1000
+diffusion_steps_trajnet: 100
+noise_schedule: 'cosine'
+timestep_respacing_eval: ''
+sigma_small: True
+
+clip_len: 145
+repr_abs_only: True
+
+model_path_trajnet: 'data/checkpoints/trajnet_checkpoint/model000450000.pt'
+model_path_trajnet_control: 'data/checkpoints/trajnet_control_checkpoint/model000400000.pt'
+model_path_posenet: 'data/checkpoints/posenet_checkpoint/model000200000.pt'
+
+input_noise: True
+load_noise: True
+load_noise_level: 5
+
+batch_size: 64
+cond_fn_with_grad: True
+infill_traj: False
+traj_mask_ratio: 0.0
+mask_scheme: lower
+save_root: 'test_results/results_amass_full'
+
+sample_iter: 2
+iter2_cond_noisy_traj: False
+iter2_cond_noisy_pose: True
+early_stop: False

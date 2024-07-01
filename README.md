@@ -270,7 +270,8 @@ If you want to run RoHM on your customized input:
   * If your input initial sequences do not follow this, you need to firstly perform proper transformation to obtain sequences with z/y axis up
 
 ## License
-The majority of RoHM is licensed under CC-BY-NC (including released checkpoints, released initialized / final motion sequences), however portions of the project are available under separate license terms: 
+The majority of RoHM is licensed under CC-BY-NC (including the code, released checkpoints, released dataset for initialized / final motion sequences), 
+however portions of the project are available under separate license terms: 
 * Trimesh, [Guided Diffusion](https://github.com/openai/guided-diffusion), and [MDM](https://github.com/GuyTevet/motion-diffusion-model) are licensed under the MIT license;
 * [konia](https://github.com/kornia/kornia/tree/master) is licensed under Apache License.
 

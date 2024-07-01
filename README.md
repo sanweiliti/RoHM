@@ -75,9 +75,13 @@ Note that the latest version is 1.1 while we use 1.0 in the implementation.
 
 Download smplx vertices segmentation `smplx_vert_segmentation.json` from [here](https://meshcapade.wiki/assets/SMPL_body_segmentation/smplx/smplx_vert_segmentation.json).
 
-### Other data (checkpoints, input noise for evaluation, etc.)
-Download the model checkpoints from [here](https://github.com/sanweiliti/RoHM/releases/tag/v0) and unzip.
-Download `eval_noise_smplx` (pre-computed motion noise for evaluation on AMASS) from [here](https://drive.google.com/file/d/18aAWO-57ZQDxd3gw3avuy1gdj-tWUDxj/view?usp=sharing) and unzip.
+
+### Other data (checkpoints, results, etc.)
+Download the model checkpoints from [here](https://github.com/sanweiliti/RoHM/releases/tag/v0).
+Download other processed/saved data from [here](https://drive.google.com/file/d/14H9qglRi9ogPO1dhBUjJWy5_vimDrmCs/view?usp=sharing) and unzip, including:
+* `init_motions`, initialized motion sequences (RoHM input) on PROX and EgoBody
+* `test_results_release`, reconstructed motion sequences (RoHM output) on PROX and EgoBody
+* `eval_noise_smplx`, pre-computed motion noise for RoHM evaluation on AMASS
 
 
 ### Organize all downloaded data as below:
@@ -89,6 +93,8 @@ RoHM
 │   │   │   ├── smplx
 │   ├── checkpoints
 │   ├── eval_noise_smplx
+│   ├── init_motions
+│   ├── test_results_release
 │   ├── smplx_vert_segmentation.json
 ├── datasets
 │   ├── AMASS_smplx_preprocessed
@@ -183,9 +189,10 @@ To obtain the initial (noisy and partially visible) motions on PROX, we use the 
 * For RGBD-based reconstruction on PROX, we obtain the initial motion from per-frame optimization by adapted code from [LEMO](https://github.com/sanweiliti/LEMO).
 * For RGB-based reconstruction on EgoBody, we obtain the intial motion from VPoser-t using the code from [HuMoR](https://github.com/davrempe/humor).
 
-<span style="color: red"> TODO: </span> we might provide our preprocessed initial & final motion sequences, or scripts to get the initializations later (currently undergoing license review).
-For now, we provide:
+We provide our preprocessed initial motion sequence in the folder ```data/init_motions```, 
+and the final output motion sequences from RoHM in the folder ```data/test_results_release``` for your reference.
 
+<!-- For now, we provide:
 * A sample sequence for initilized motion on PROX by [LEMO](https://github.com/sanweiliti/LEMO?tab=readme-ov-file#additional-data) (see 'Additional Data' section in LEMO).
 * A sample sequence for initilized motion on EgoBody by EgoBody Dataset (download `rohm_init_egobody_rgb.zip` from [EgoBody dataset](https://sanweiliti.github.io/egobody/egobody.html))
 * With the sample init motions above, or your customized input, please prepare your initial SMPL-X sequences following the data format as below:
@@ -208,6 +215,8 @@ RoHM
 │   │   │   ├── same as in init_prox_rgb...
 ```
 where `000.pkl` follows the same format as in PROX and EgoBody datasets to save SMPL-X parameters. 
+-->
+
 Note that for the following scripts, the intial motions should have z-axis up for PROX, and y-axis up for EgoBody.
 
 ### Test on PROX/EgoBody
@@ -261,7 +270,7 @@ If you want to run RoHM on your customized input:
   * If your input initial sequences do not follow this, you need to firstly perform proper transformation to obtain sequences with z/y axis up
 
 ## License
-The majority of RoHM is licensed under CC-BY-NC (including released checkpoints), however portions of the project are available under separate license terms: 
+The majority of RoHM is licensed under CC-BY-NC (including released checkpoints, released initialized / final motion sequences), however portions of the project are available under separate license terms: 
 * Trimesh, [Guided Diffusion](https://github.com/openai/guided-diffusion), and [MDM](https://github.com/GuyTevet/motion-diffusion-model) are licensed under the MIT license;
 * [konia](https://github.com/kornia/kornia/tree/master) is licensed under Apache License.
 

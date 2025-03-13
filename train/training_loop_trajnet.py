@@ -92,20 +92,21 @@ class TrainLoopTrajNet:
 
                 if self.step % self.log_interval == 0 and self.step > 0:
                     self.model.eval()
+                    eval_losses = {}
                     for test_step, test_batch in tqdm(enumerate(self.test_dataloader)):
                         for key in test_batch.keys():
                             test_batch[key] = test_batch[key].to(self.device)
                         shape = list(test_batch['motion_repr_clean'][:, :, 0:traj_feat_dim].shape)
-                        eval_losses, val_output = self.diffusion_eval.eval_losses(model=self.model, batch=test_batch,
+                        eval_losses_cur_batch, val_output = self.diffusion_eval.eval_losses(model=self.model, batch=test_batch,
                                                                                   shape=shape, progress=False,
                                                                                   clip_denoised=False, cur_epoch=epoch,
                                                                                   timestep_respacing=self.timestep_respacing_eval,
                                                                                   smplx_model=self.smplx_neutral)
-                        for key in eval_losses.keys():
+                        for key in eval_losses_cur_batch.keys():
                             if test_step == 0:
-                                eval_losses[key] = eval_losses[key].detach().clone()
+                                eval_losses[key] = eval_losses_cur_batch[key].detach().clone()
                             if test_step > 0:
-                                eval_losses[key] += eval_losses[key].detach().clone()
+                                eval_losses[key] += eval_losses_cur_batch[key].detach().clone()
 
                     for key in eval_losses.keys():
                         eval_losses[key] = eval_losses[key] / (test_step + 1)

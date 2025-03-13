@@ -38,7 +38,7 @@ group.add_argument('--dataset_root', type=str, default='/mnt/hdd/diffusion_mocap
 group.add_argument('--task', default='traj', type=str, choices=['traj', 'pose'])
 group.add_argument("--clip_len", default=145, type=int, help="sequence length for each clip")
 group.add_argument('--repr_abs_only', default='True', type=lambda x: x.lower() in ['true', '1'], help='if True, only include absolute trajectory repr')
-group.add_argument("--trajcontrol", default=False, type=bool, help='if True, finetune trajnet with TrajControl')
+group.add_argument("--trajcontrol", default=False, type=lambda x: x.lower() in ['true', '1'], help='if True, finetune trajnet with TrajControl')
 group.add_argument('--load_pretrained_backbone', default='False', type=lambda x: x.lower() in ['true', '1'], help='if load pretrained vanilla trajNet backbone')
 group.add_argument('--pretrained_backbone_path', type=str, default='', help='')
 ### load pretrained checkpoints
